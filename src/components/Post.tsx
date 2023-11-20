@@ -1,14 +1,31 @@
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 import styles from './Post.module.css'
-import { useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 
-export function Post({ author, publishedAt, content }) {
+interface Author {
+    avatarUrl: string, 
+    name: string,
+    role: string,
+}
+
+interface Content {
+    type: 'paragraph' | 'link',
+    content: string
+}
+
+export interface PostProps {
+    author: Author,
+    publishedAt: Date,
+    content: Content[]
+}
+
+export function Post({ author, publishedAt, content }: PostProps) {
     const [comments, setComments] = useState(['Post muito bom!'])
-    const [newCommentText, setNewCommentText] = useState([''])
+    const [newCommentText, setNewCommentText] = useState('')
 
     const publishedDateFormatted = format(new Date(publishedAt), "d 'de' LLLL 'ás' HH:mm'h'", {
         locale: ptBR,
@@ -18,15 +35,14 @@ export function Post({ author, publishedAt, content }) {
         addSuffix: true,
     })
 
-    function addComment() {
+    function addComment(event: FormEvent) {
         event.preventDefault();
 
-        const newComment = event.target.comment.value
-        setComments([...comments, newComment])
+        setComments([...comments, newCommentText])
         setNewCommentText('')
     }
 
-    function deleteComment(commentToDelete) {
+    function deleteComment(commentToDelete: string) {
         const newCommentList = comments.filter(comment => {
             return comment !== commentToDelete
         })
@@ -34,7 +50,7 @@ export function Post({ author, publishedAt, content }) {
         setComments(newCommentList)
     }
 
-    function newCommentChange() {
+    function newCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
         setNewCommentText(event.target.value)
     }
 
