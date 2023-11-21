@@ -13,6 +13,7 @@
 - Listagem de Posts
 - Sidebar com o nome e avatar
 - Inserir comentários
+- Listagem de comentários
 
 # Imagem do projeto
 <img src="https://github.com/clesarjr/ignite-feed_react-ts/assets/53583192/47c0bbd1-d1e0-4a75-bfd1-e1f5ac66944f"/>
