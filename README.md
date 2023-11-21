@@ -1,9 +1,18 @@
-# React + TypeScript + Vite
+<h1><p align="center">Ignite Feed</p></h1>
+ <p align="center">Projeto do curso de React da <a href="https://www.rocketseat.com.br/">@rocketseat</a> </p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🎯 Sobre
+   Projeto que lista Posts e permite inserir comentários.
 
-Currently, two official plugins are available:
+# 🚀 Tecnologias utilizadas 
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🎇 Funcionalidades 
+- Listagem de Posts
+- Sidebar com o nome e avatar
+- Inserir comentários
 
+# Imagem do projeto
+<img src="https://github.com/clesarjr/ignite-feed_react-ts/assets/53583192/47c0bbd1-d1e0-4a75-bfd1-e1f5ac66944f"/>
